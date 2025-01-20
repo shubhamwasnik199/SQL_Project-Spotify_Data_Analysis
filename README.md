@@ -1,5 +1,7 @@
 # SQL_Project-Spotify_Data_Analysis.
-file:///D:/Portfolio/Pgsql/Spotify%20Project/Spotify-Black-Logo.wine.png
+
+![image alt](https://github.com/shubhamwasnik199/SQL_Project-Spotify_Data_Analysis/blob/cf0fc28a54e8c8d0ab51dfaacbd73ade1a2d1762/spotify-logo-png-7055.png)
+
 
 # OVERVIEW
 In this project, a Spotify dataset containing numerous attributes about songs, albums, and artists is analyzed using SQL. The entire process of normalizing a denormalized dataset, running SQL queries with different levels of complexity (simple, medium, and advanced), and The project's main objectives are to learn advanced SQL skills and use the dataset to produce insightful analysis.
