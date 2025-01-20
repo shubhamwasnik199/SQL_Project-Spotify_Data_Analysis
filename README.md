@@ -4,8 +4,8 @@
 # OVERVIEW
 In this project, a Spotify dataset containing numerous attributes about songs, albums, and artists is analyzed using SQL. The entire process of normalizing a denormalized dataset, running SQL queries with different levels of complexity (simple, medium, and advanced), and The project's main objectives are to learn advanced SQL skills and use the dataset to produce insightful analysis.
 
-
-'''-- create table
+```sql
+-- create table
 DROP TABLE IF EXISTS spotify;
 CREATE TABLE spotify (
     artist VARCHAR(255),
@@ -33,7 +33,7 @@ CREATE TABLE spotify (
     energy_liveness FLOAT,
     most_played_on VARCHAR(50)
 );
-'''
+```
 
 
 ## Key Features
@@ -72,8 +72,24 @@ CREATE TABLE spotify (
 
 #Advanced Level
 1. Find the top 3 most-viewed tracks for each artist using window functions.
+```
+WITH ranking_artist
+AS
+(SELECT 
+	artist,
+	track,
+	SUM(views) AS Most_view,
+	DENSE_RANK() OVER (PARTITION BY artist ORDER BY SUM(views) DESC) AS RANK
+	FROM Spotify
+GROUP BY 1, 2
+ORDER BY 1, 3 DESC 
+)	
+SELECT * FROM ranking_artist
+	WHERE rank <= 3;
+```
+
 2. Write a query to find tracks where the liveness score is above the average.
-3. Use a WITH clause to calculate the difference between the highest and lowest energy values for tracks in each album.
+3. Use a `WITH` clause to calculate the difference between the highest and lowest energy values for tracks in each album.
 4. Find tracks where the energy-to-liveness ratio is greater than 1.2.
 5. Calculate the cumulative sum of likes for tracks ordered by the number of views, using window functions.
 
