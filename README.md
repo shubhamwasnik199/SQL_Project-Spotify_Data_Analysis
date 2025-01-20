@@ -105,4 +105,10 @@ Some of the key insights derived from the dataset include:
 - Patterns in track duration and popularity across different years.
 
 
+## How to Run the Project
+-- Install PostgreSQL and pgAdmin (if not already installed).
+-- Set up the database schema and tables using the provided normalization structure.
+-- Insert the sample data into the respective tables.
+-- Execute SQL queries to solve the listed problems.
+-- Explore query optimization techniques for large datasets.
 
